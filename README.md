@@ -20,6 +20,7 @@ The data are downloaded from the NREL webpage and represent metoceanic character
 ## Prerequisites
 
 - Python 3.x
+- Jupyter Notebook
 - pandas library
 - ipywidgets library
 - pdfkit library
