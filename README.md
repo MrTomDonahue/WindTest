@@ -24,6 +24,7 @@ pip install pandas ipywidgets pdfkit
 ```python
 # Set the path to the wkhtmltopdf executable
 config = pdfkit.configuration(wkhtmltopdf='/usr/local/bin/wkhtmltopdf')
+```
 
 ## Usage
 
