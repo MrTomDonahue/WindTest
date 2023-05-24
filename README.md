@@ -23,7 +23,7 @@ The data are downloaded from the NREL webpage and represent metoceanic charictar
 - pandas library
 - ipywidgets library
 - pdfkit library
-- wkhtmltopdf
+- wkhtmltopdf executable
 
 ## Installation
 
