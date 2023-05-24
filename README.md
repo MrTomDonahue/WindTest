@@ -6,7 +6,7 @@ A showcase of technical skills for a position in OPEX
 
 This is a Python script that allows you to read tables from an Excel file, view them, and save them as CSV or PDF. This script utilizes the pandas library to read Excel files and the ipywidgets library to create graphic user interface (GUI) in Jupyter Notebook.
 
-The data are downloaded from the NREL webpage and represent metoceanic charictartistics, averaged based on location. Three locations are represented: West Coast, East Coast and the Gulf of Mexico. The data contain valuable meteorological and ocean condition for offshore wind energy research. You can view and save different  variables of interest as tables for each of the three sites.
+The data are downloaded from the NREL webpage and represent metoceanic characteristics, averaged based on location. Three locations are represented: West Coast, East Coast and the Gulf of Mexico. The data contain valuable meteorological and ocean condition for offshore wind energy research. You can view and save different  variables of interest as tables for each of the three sites.
 
 ## Table of Contents
 - [Prerequisites](#prerequisites)
