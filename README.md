@@ -55,21 +55,6 @@ config = pdfkit.configuration(wkhtmltopdf='/usr/local/bin/wkhtmltopdf')
 6. Click the "Execute" button to perform the selected action.
 7. The output will be displayed or saved based on the selected action.
 
-1. Load the Excel file:
-url = "https://www.nrel.gov/wind/nwtc/assets/downloads/MetOcean/DistributionParameters.xlsx"
-reader = ExcelTableReader(url)
-reader.load_excel()
-
-2. Get the available sheet names:
-sheet_names = reader.get_sheet_names()
-
-3. Create an ExcelDropdown widget:
-table_names = reader.get_table_names(sheet_names[0])
-dropdown = ExcelDropdown(sheet_names, table_names)
-dropdown.create_dropdown()
-
-4. Select a sheet, table, and action from the dropdown menus, and click the "Execute" button.
-
 ## Features
 - Load an Excel file and explore its sheets and tables.
 - View the selected table within the Jupyter Notebook interface.
