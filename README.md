@@ -15,10 +15,7 @@ The data are downloaded from the NREL webpage and represent metoceanic charictar
 - [Features](#features)
 - [Contributing](#contributing)
 - [License](#license)
-- [Acknowledgements](#acknowledgements)
-- [FAQ or Troubleshooting](#faq-or-troubleshooting)
 - [Contact](#contact)
-- [Badges](#badges)
 
 ## Prerequisites
 
@@ -31,14 +28,14 @@ The data are downloaded from the NREL webpage and represent metoceanic charictar
 ## Installation
 
 1. Clone the repository:
-'''python
+```python
 git clone https://github.com/MrTomDonahue/WindTest.git
-'''
+```
 
 2. Install the required dependencies:
-'''python
+```python
 pip install pandas ipywidgets pdfkit
-'''
+```
 
 3. Install wkhtmltopdf by following the instruction at: 
 https://wkhtmltopdf.org/ 
