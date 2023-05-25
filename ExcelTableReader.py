@@ -34,9 +34,16 @@ class ExcelTableReader:
             sheet_data = self.data[sheet_name]
             table_names = self.get_table_names(sheet_name)
             if table_name == table_names[0]:
-                return sheet_data.iloc[5:16, 6:13 + 1]
+                table = sheet_data.iloc[4:16, 6:13 + 1].reset_index(drop=True)
+                table = table.drop(table.columns[[2, 3, 5, 6]], axis=1)  # Delete blank columns
+                table.columns = table.iloc[4, 6:13+1]
+                return table
             elif table_name == table_names[1]:
-                return sheet_data.iloc[5:16, 0:4 + 1]
+                table = sheet_data.iloc[5:16, 0:4 + 1].reset_index(drop=True)
+                main = table.iloc[1, 0:5].tolist()
+                sub = table.iloc[4, 0:5].tolist()
+                table.columns = pd.MultiIndex.from_tuples(zip(main, sub))
+                return table
             else:
                 print("Invalid table name.")
         else:
