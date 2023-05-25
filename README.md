@@ -24,7 +24,11 @@ The data are downloaded from the NREL webpage and represent metoceanic character
 - pandas library
 - ipywidgets library
 - pdfkit library
+- xlrd library
+- openpyxl library
 - wkhtmltopdf executable
+
+
 
 ## Installation
 
@@ -35,7 +39,7 @@ git clone https://github.com/MrTomDonahue/WindTest.git
 
 2. Install the required dependencies:
 ```python
-pip install pandas ipywidgets pdfkit
+pip install pandas ipywidgets pdfkit xlrd openpyxl
 ```
 
 3. Install wkhtmltopdf by following the instruction at: 
