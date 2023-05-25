@@ -39,7 +39,6 @@ class ExcelTableReader:
                 table = sheet_data.iloc[4:16, 6:13 + 1].reset_index(drop=True)
                 table = table.drop(table.columns[[2, 3, 5, 6]], axis=1)  # Delete blank columns
                 table.columns = table.iloc[0]
-                # table.columns = sheet_data.iloc[4, 6:13+1]
                 table = table[1:]  # remove duplicate column header
                 return table
             elif table_name == table_names[1]:
@@ -51,7 +50,6 @@ class ExcelTableReader:
             elif table_name == table_names[2]:
                 table = sheet_data.iloc[4:16, 0:4 + 1].reset_index(drop=True)
                 main = sheet_data.iloc[1, 0:5].tolist()
-                # sub = sheet_data.iloc[4, 0:5].tolist()
                 sub = table.iloc[0].tolist()
                 table.columns = pd.MultiIndex.from_tuples(zip(main, sub))
                 table = table[1:]
