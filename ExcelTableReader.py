@@ -8,7 +8,7 @@ class ExcelTableReader:
 
     def load_excel(self):
         try:
-            self.data = pd.read_excel(self.url, sheet_name=None)
+            self.data = pd.read_excel(self.url, sheet_name=None, engine='openpyxl')
             # print("Excel file loaded successfully.")
         except Exception as e:
             print(f"Error loading Excel file: {str(e)}")
