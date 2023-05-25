@@ -15,7 +15,8 @@ class ExcelTableReader:
 
     def get_sheet_names(self):
         if self.data is not None:
-            return list(self.data.keys())
+            sheet_names = list(self.data.keys())
+            return sheet_names[:3]
         else:
             print("No Excel file loaded.")
             return []
@@ -24,7 +25,7 @@ class ExcelTableReader:
         if sheet_name in self.data.keys():
             sheet_data = self.data[sheet_name]
             table1_name = sheet_data.iloc[3, 6]
-            table2_name = sheet_data.iloc[4, 0]
+            table2_name = sheet_data.iloc[4, 0].replace("/", "-")
             return table1_name, table2_name
         else:
             print(f"Sheet '{sheet_name}' does not exist.")
@@ -36,12 +37,17 @@ class ExcelTableReader:
             if table_name == table_names[0]:
                 table = sheet_data.iloc[4:16, 6:13 + 1].reset_index(drop=True)
                 table = table.drop(table.columns[[2, 3, 5, 6]], axis=1)  # Delete blank columns
-                table.columns = table.iloc[4, 6:13+1]
+                # table.columns = table.iloc[4, 6:13+1]
+                table.columns = table.iloc[0]
+                table = table[1:] # remove duplicate column header
+                table = table.set_index(table.columns[0])
                 return table
             elif table_name == table_names[1]:
-                table = sheet_data.iloc[5:16, 0:4 + 1].reset_index(drop=True)
-                main = table.iloc[1, 0:5].tolist()
-                sub = table.iloc[4, 0:5].tolist()
+                table = sheet_data.iloc[4:16, 0:4 + 1].reset_index(drop=True)
+                # main = table.iloc[1, 0:5].tolist()
+                main = table.iloc[0].tolist()
+                # sub = table.iloc[4, 0:5].tolist()
+                sub = table.iloc[1].tolist()
                 table.columns = pd.MultiIndex.from_tuples(zip(main, sub))
                 return table
             else:
