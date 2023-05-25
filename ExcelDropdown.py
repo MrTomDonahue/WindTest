@@ -49,8 +49,30 @@ class ExcelDropdown:
                 if table is not None:
                     with self.output:
                         self.output.clear_output()
-                        table_html = table.to_html(index=False)
-                        pdfkit.from_string(table_html, f"{selected_sheet}_{selected_table}.pdf")
+                        table_html = table.to_html(index=True)
+                        styled_html = f"""
+                        <style>
+                            table {{
+                                font-family: Arial, sans-serif;
+                                border-collapse: collapse;
+                                width: 100%;
+                            }}
+
+                            th, td {{
+                                border: 1px solid #ddd;
+                                padding: 8px;
+                                text-align: left;
+                            }}
+
+                            th {{
+                                background-color: #f2f2f2;
+                            }}
+                        </style>
+
+                        {table_html}
+                        """
+
+                        pdfkit.from_string(styled_html, f"{selected_sheet}_{selected_table}.pdf")
                         print(f"Table saved as {selected_sheet}_{selected_table}.pdf")
 
         self.button.on_click(execute_action)
