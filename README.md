@@ -52,8 +52,8 @@ config = pdfkit.configuration(wkhtmltopdf='/usr/local/bin/wkhtmltopdf')
 
 ## Usage
 
-1. Set the url variable in the script to the URL or local path of the Excel file you want to read.
-2. Run the script in a Jupyter Notebook or Python environment.
+1. Set the url variable in the script to the URL that downloads the .xlsx from NREL.
+2. Run the 'WindTestData.ipynd' file in a Jupyter Notebook.
 3. The script will load the Excel file and display a dropdown interface.
 4. Select the sheet and table you want to explore.
 5. Choose an action from the available options: View, Save as CSV, or Save as PDF.
